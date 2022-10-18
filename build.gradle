@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+application {
+    mainClass = 'ua/goit/petstore/Main.java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+    implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.13'
+
+    // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpmime
+    implementation group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.5.13'
+
+// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.14.0-rc2'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    implementation 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+}
+
+test {
+    useJUnitPlatform()
+}
